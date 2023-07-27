@@ -572,7 +572,9 @@ if __name__ == "__main__":
         if 2 == param['dim']:
             meter_accuracy.add(state['output'].data, torch.LongTensor(state['sample'][1]))
             confusion_meter.add(state['output'].data, torch.LongTensor(state['sample'][1]))
-        meter_loss.add(state['loss'].data[0])
+        # meter_loss.add(state['loss'].data[0])
+        meter_loss.add(state['loss'].item())
+
 
 
     def on_start_epoch(state):
